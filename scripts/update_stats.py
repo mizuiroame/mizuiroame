@@ -83,12 +83,12 @@ def number(value: int) -> str:
 
 
 def render(stats: list[Stats], today: dt.date) -> str:
-    width, row_h, top = 840, 76, 150
+    width, row_h, top = 640, 78, 156
     height = top + row_h * len(stats) + 46
     total_stars = sum(s.stars for s in stats)
     total_downloads = sum(s.downloads for s in stats)
     most = max((s.downloads for s in stats), default=0) or 1
-    bar_x, bar_w = 300, 330
+    bar_x, bar_w = 316, 140
 
     rows = []
     for i, s in enumerate(stats):
@@ -97,12 +97,12 @@ def render(stats: list[Stats], today: dt.date) -> str:
         rows.append(f"""
   <g>
     <image x="36" y="{y}" width="56" height="56" href="{icon_uri(s.app)}" clip-path="url(#round)"/>
-    <text x="110" y="{y + 25}" class="name">{escape(s.app.name)}</text>
-    <text x="110" y="{y + 47}" class="kind">{escape(s.app.kind)} · {escape(s.version)}</text>
+    <text x="106" y="{y + 25}" class="name">{escape(s.app.name)}</text>
+    <text x="106" y="{y + 48}" class="kind">{escape(s.app.kind)} · {escape(s.version)}</text>
     <rect x="{bar_x}" y="{y + 22}" width="{bar_w}" height="12" rx="6" class="track"/>
     <rect x="{bar_x}" y="{y + 22}" width="{fill}" height="12" rx="6" fill="{s.app.accent}"/>
-    <text x="{width - 120}" y="{y + 33}" class="num" text-anchor="end">{number(s.downloads)}</text>
-    <text x="{width - 36}" y="{y + 33}" class="num star" text-anchor="end">★ {number(s.stars)}</text>
+    <text x="{width - 92}" y="{y + 34}" class="num" text-anchor="end">{number(s.downloads)}</text>
+    <text x="{width - 28}" y="{y + 34}" class="num star" text-anchor="end">★ {number(s.stars)}</text>
   </g>""")
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Kai apps: {total_stars} stars, {total_downloads} downloads">
@@ -116,26 +116,26 @@ def render(stats: list[Stats], today: dt.date) -> str:
   </defs>
   <style>
     text {{ font-family: "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; }}
-    .label {{ fill: #8B8D98; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; }}
-    .big {{ fill: #F4F4F6; font-size: 40px; font-weight: 700; }}
-    .name {{ fill: #F4F4F6; font-size: 19px; font-weight: 700; }}
-    .kind {{ fill: #8B8D98; font-size: 13px; }}
-    .num {{ fill: #F4F4F6; font-size: 16px; font-weight: 600; }}
+    .label {{ fill: #8B8D98; font-size: 15px; font-weight: 600; letter-spacing: 1.5px; }}
+    .big {{ fill: #F4F4F6; font-size: 46px; font-weight: 700; }}
+    .name {{ fill: #F4F4F6; font-size: 22px; font-weight: 700; }}
+    .kind {{ fill: #8B8D98; font-size: 15px; }}
+    .num {{ fill: #F4F4F6; font-size: 19px; font-weight: 600; }}
     .star {{ fill: #FFD166; }}
-    .head {{ fill: #8B8D98; font-size: 12px; font-weight: 600; letter-spacing: 1px; }}
-    .foot {{ fill: #62646E; font-size: 12px; }}
+    .head {{ fill: #8B8D98; font-size: 13px; font-weight: 600; letter-spacing: 1px; }}
+    .foot {{ fill: #62646E; font-size: 13px; }}
     .track {{ fill: #3A3B42; }}
   </style>
   <rect width="{width}" height="{height}" rx="18" fill="url(#bg)"/>
-  <path d="M{width - 260} 0 L{width} 0 L{width} {height} L{width - 260 - height} {height} Z" fill="#000" opacity=".12"/>
+  <path d="M{width - 200} 0 L{width} 0 L{width} {height} L{width - 200 - height} {height} Z" fill="#000" opacity=".12"/>
   <text x="36" y="46" class="label">TOTAL STARS</text>
-  <text x="36" y="94" class="big"><tspan fill="#FFD166">★</tspan> {number(total_stars)}</text>
-  <text x="300" y="46" class="label">TOTAL DOWNLOADS</text>
-  <text x="300" y="94" class="big"><tspan fill="#4FC2F8">↓</tspan> {number(total_downloads)}</text>
-  <text x="{width - 120}" y="{top - 14}" class="head" text-anchor="end">DOWNLOADS</text>
-  <text x="{width - 36}" y="{top - 14}" class="head" text-anchor="end">STARS</text>
+  <text x="36" y="98" class="big"><tspan fill="#FFD166">★</tspan> {number(total_stars)}</text>
+  <text x="316" y="46" class="label">TOTAL DOWNLOADS</text>
+  <text x="316" y="98" class="big"><tspan fill="#4FC2F8">↓</tspan> {number(total_downloads)}</text>
+  <text x="{width - 92}" y="{top - 16}" class="head" text-anchor="end">DOWNLOADS</text>
+  <text x="{width - 28}" y="{top - 16}" class="head" text-anchor="end">★</text>
   {''.join(rows)}
-  <text x="36" y="{height - 20}" class="foot">Release downloads on GitHub, Brewstore installs included · updated {today.isoformat()}</text>
+  <text x="36" y="{height - 20}" class="foot">GitHub release downloads, Brewstore's included · {today.isoformat()}</text>
 </svg>
 """
 

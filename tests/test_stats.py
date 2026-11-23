@@ -21,7 +21,7 @@ class RenderTest(unittest.TestCase):
         self.assertTrue(root.tag.endswith("svg"))
         self.assertIn("1,545", svg)
         self.assertIn("</tspan> 10</text>", svg)
-        self.assertIn("updated 2026-11-23", svg)
+        self.assertIn("· 2026-11-23", svg)
         for app in us.APPS:
             self.assertIn(app.name, svg)
 
