@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500" role="img" aria-label="Kai apps: 24 stars, 756 downloads">
-  <title>Kai apps: 24 stars, 756 downloads</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500" role="img" aria-label="Kai apps: 24 stars, 757 downloads">
+  <title>Kai apps: 24 stars, 757 downloads</title>
   <defs>
     <clipPath id="round" clipPathUnits="objectBoundingBox"><rect width="1" height="1" rx="0.22"/></clipPath>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -24,7 +24,7 @@
   <text x="36" y="46" class="label">TOTAL STARS</text>
   <text x="36" y="94" class="big"><tspan fill="#FFD166">★</tspan> 24</text>
   <text x="300" y="46" class="label">TOTAL DOWNLOADS</text>
-  <text x="300" y="94" class="big"><tspan fill="#4FC2F8">↓</tspan> 756</text>
+  <text x="300" y="94" class="big"><tspan fill="#4FC2F8">↓</tspan> 757</text>
   <text x="720" y="136" class="head" text-anchor="end">DOWNLOADS</text>
   <text x="804" y="136" class="head" text-anchor="end">STARS</text>
   
@@ -33,7 +33,7 @@
     <text x="110" y="175" class="name">KaiVideo</text>
     <text x="110" y="197" class="kind">Video player · v1.15.0</text>
     <rect x="300" y="172" width="330" height="12" rx="6" class="track"/>
-    <rect x="300" y="172" width="263" height="12" rx="6" fill="#FF6C9D"/>
+    <rect x="300" y="172" width="262" height="12" rx="6" fill="#FF6C9D"/>
     <text x="720" y="183" class="num" text-anchor="end">213</text>
     <text x="804" y="183" class="num star" text-anchor="end">★ 7</text>
   </g>
@@ -43,7 +43,7 @@
     <text x="110" y="273" class="kind">Music player · v1.4.0</text>
     <rect x="300" y="248" width="330" height="12" rx="6" class="track"/>
     <rect x="300" y="248" width="330" height="12" rx="6" fill="#FF6C9D"/>
-    <text x="720" y="259" class="num" text-anchor="end">267</text>
+    <text x="720" y="259" class="num" text-anchor="end">268</text>
     <text x="804" y="259" class="num star" text-anchor="end">★ 9</text>
   </g>
   <g>
@@ -51,7 +51,7 @@
     <text x="110" y="327" class="name">KaiRadio</text>
     <text x="110" y="349" class="kind">Radio and podcasts · v1.4.0</text>
     <rect x="300" y="324" width="330" height="12" rx="6" class="track"/>
-    <rect x="300" y="324" width="229" height="12" rx="6" fill="#4FC2F8"/>
+    <rect x="300" y="324" width="228" height="12" rx="6" fill="#4FC2F8"/>
     <text x="720" y="335" class="num" text-anchor="end">185</text>
     <text x="804" y="335" class="num star" text-anchor="end">★ 3</text>
   </g>
