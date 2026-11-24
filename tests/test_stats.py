@@ -16,17 +16,17 @@ def sample(downloads: tuple[int, ...]) -> list[us.Stats]:
 
 class RenderTest(unittest.TestCase):
     def test_stats_card_is_valid_svg_with_totals(self) -> None:
-        svg = us.render(sample((1200, 300, 0, 45)), dt.date(2026, 11, 23))
+        svg = us.render(sample((1200, 300, 0, 0, 45)), dt.date(2026, 11, 23))
         root = ET.fromstring(svg)
         self.assertTrue(root.tag.endswith("svg"))
         self.assertIn("1,545", svg)
-        self.assertIn("</tspan> 10</text>", svg)
+        self.assertIn("</tspan> 15</text>", svg)
         self.assertIn("· 2026-11-23", svg)
         for app in us.APPS:
             self.assertIn(app.name, svg)
 
     def test_no_downloads_still_draws_bars(self) -> None:
-        svg = us.render(sample((0, 0, 0, 0)), dt.date(2026, 1, 1))
+        svg = us.render(sample((0, 0, 0, 0, 0)), dt.date(2026, 1, 1))
         ET.fromstring(svg)
         self.assertIn('width="6"', svg)
 

@@ -4,7 +4,7 @@
 
 <p align="center">
   Native apps for <b>Nintendo Switch 2</b> on <a href="https://github.com/ouncebrew">kaiHEN</a>, plus a PC tool to fill the console.
-  The console apps install from <b>Brewstore</b> and come in 9 languages. All four are open source.
+  The console apps install from <b>Brewstore</b> and most come in 9 languages. All of them are open source.
 </p>
 
 ## Featured
@@ -36,6 +36,15 @@ Plus **podcasts**: top charts by region, search and subscriptions.
 
 <a href="https://github.com/mizuiroame/kairadio"><img src="https://raw.githubusercontent.com/mizuiroame/kairadio/main/docs/screenshots/world.png" alt="KaiRadio's world globe" width="100%"></a>
 
+### <img src="assets/icons/kaireader-256.png" width="28" align="center" alt=""> [KaiReader](https://github.com/mizuiroame/kaireader)
+
+<img src="https://img.shields.io/badge/new-0.2-F2B54A?style=flat-square" alt="new"> <img src="https://img.shields.io/github/stars/mizuiroame/kaireader?style=flat-square&label=%E2%98%85&color=2C2D32" alt="stars">
+
+Your DRM-free books from the SD card, as on an e-reader: **EPUB**, **PDF**, comics, FB2, MOBI and TXT, with their covers.
+Ten text sizes, light, sepia, dark and black pages, a table of contents, and the console held upright like a book.
+
+<a href="https://github.com/mizuiroame/kaireader"><img src="https://raw.githubusercontent.com/mizuiroame/kaireader/main/docs/screenshots/library.png" alt="KaiReader's library of covers" width="100%"></a>
+
 ### <img src="assets/icons/kaidrop-256.png" width="28" align="center" alt=""> [KaiDrop](https://github.com/mizuiroame/kaidrop)
 
 <img src="https://img.shields.io/github/v/release/mizuiroame/kaidrop?style=flat-square&label=&color=5DE0A6" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kaidrop/total?style=flat-square&label=downloads&color=2C2D32" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kaidrop?style=flat-square&label=%E2%98%85&color=2C2D32" alt="stars">
@@ -48,7 +57,7 @@ Drag and drop both ways, transfers that resume after a cut, and names the consol
 ## In numbers
 
 <p align="center">
-  <img src="assets/stats.svg" alt="Total stars and downloads of the four apps" width="100%">
+  <img src="assets/stats.svg" alt="Total stars and downloads of the apps" width="100%">
 </p>
 
 <sub>Updated every day by a GitHub Action. Downloads are of the release files on GitHub, which Brewstore installs from too.</sub>

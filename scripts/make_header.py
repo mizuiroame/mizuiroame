@@ -1,4 +1,4 @@
-"""Build assets/header.svg, the profile banner, with the four app icons inside it."""
+"""Build assets/header.svg, the profile banner, with the app icons inside it."""
 
 from __future__ import annotations
 
@@ -42,7 +42,7 @@ def render() -> str:
   <path d="M300 0 L{WIDTH} 0 L{WIDTH} {HEIGHT} L{300 + HEIGHT} {HEIGHT} Z" fill="#000" opacity=".10"/>
   <text x="40" y="58" class="tag">SWITCH 2 HOMEBREW · KAIHEN</text>
   <text x="38" y="122" class="title" fill="url(#ink)">Mizuiro</text>
-  <text x="40" y="160" class="sub">Video, music, radio and file transfers,</text>
+  <text x="40" y="160" class="sub">Video, music, radio, books and file transfers,</text>
   <text x="40" y="184" class="sub">made to feel at home on the console.</text>
   {''.join(icons)}
 </svg>

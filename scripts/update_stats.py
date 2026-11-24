@@ -36,6 +36,7 @@ APPS = (
     App("kaivideo", "KaiVideo", "Video player", "#FF6C9D"),
     App("kaiplayer", "KaiPlayer", "Music player", "#FF6C9D"),
     App("kairadio", "KaiRadio", "Radio and podcasts", "#4FC2F8"),
+    App("kaireader", "KaiReader", "Book reader", "#F2B54A"),
     App("kaidrop", "KaiDrop", "PC to console transfers", "#5DE0A6"),
 )
 
