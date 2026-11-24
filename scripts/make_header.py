@@ -1,49 +1,62 @@
-"""Build assets/header.svg, the profile banner, with the app icons inside it."""
+"""Build assets/header.svg, the profile banner: Mizuiro's mark (the 水色 seal and
+MIZUIRO), a line about the apps, and their icons.
+
+The mark's pieces (assets/brand-bg.png, brand-seal.png, brand-wordmark.png)
+are pictures made on the PC by switch2homebrew-submit/tools/brand.py, so the
+banner looks the same on every screen without its fonts; this only puts them
+together, which needs nothing but the standard library.
+"""
 
 from __future__ import annotations
 
+import base64
 import sys
 
 from update_stats import APPS, ROOT, icon_uri
 
 OUT = ROOT / "assets" / "header.svg"
 WIDTH, HEIGHT = 840, 210
+ICON, ICON_STEP = 52, 62
+SEAL_H = 150
+WORD_H = 34
+
+
+def asset_uri(name: str) -> str:
+    data = (ROOT / "assets" / name).read_bytes()
+    return "data:image/png;base64," + base64.b64encode(data).decode("ascii")
 
 
 def render() -> str:
     icons = []
     for i, app in enumerate(APPS):
-        x = WIDTH - 36 - 64 - (len(APPS) - 1 - i) * 78
+        x = WIDTH - 36 - ICON - (len(APPS) - 1 - i) * ICON_STEP
         icons.append(
             f'<g>'
-            f'<image x="{x}" y="73" width="64" height="64" href="{icon_uri(app)}" clip-path="url(#round)"/>'
-            f'<rect x="{x + 20}" y="146" width="24" height="4" rx="2" fill="{app.accent}"/></g>'
+            f'<image x="{x}" y="72" width="{ICON}" height="{ICON}" href="{icon_uri(app)}" clip-path="url(#round)"/>'
+            f'<rect x="{x + ICON / 2 - 10}" y="{72 + ICON + 10}" width="20" height="3" rx="1.5" fill="{app.accent}"/></g>'
         )
+    seal_w = round(SEAL_H * 202 / 334)
+    word_w = round(WORD_H * 611 / 122)
+    text_x = 40 + seal_w + 28
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-label="Mizuiro: homebrew apps for Nintendo Switch 2">
   <title>Mizuiro: homebrew apps for Nintendo Switch 2</title>
   <defs>
+    <clipPath id="card"><rect width="{WIDTH}" height="{HEIGHT}" rx="18"/></clipPath>
     <clipPath id="round" clipPathUnits="objectBoundingBox"><rect width="1" height="1" rx="0.22"/></clipPath>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2C2D32"/>
-      <stop offset="1" stop-color="#1E1F24"/>
-    </linearGradient>
-    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#A0D8EF"/>
-      <stop offset="1" stop-color="#4FC2F8"/>
-    </linearGradient>
   </defs>
   <style>
     text {{ font-family: "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; }}
-    .title {{ font-size: 58px; font-weight: 800; letter-spacing: -1px; }}
-    .sub {{ fill: #C9CAD1; font-size: 18px; }}
-    .tag {{ fill: #8B8D98; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; }}
+    .sub {{ fill: #C9D2D6; font-size: 15px; letter-spacing: 0.3px; }}
+    .tag {{ fill: #7E8A90; font-size: 11px; font-weight: 600; letter-spacing: 2.2px; }}
   </style>
-  <rect width="{WIDTH}" height="{HEIGHT}" rx="18" fill="url(#bg)"/>
-  <path d="M300 0 L{WIDTH} 0 L{WIDTH} {HEIGHT} L{300 + HEIGHT} {HEIGHT} Z" fill="#000" opacity=".10"/>
-  <text x="40" y="58" class="tag">SWITCH 2 HOMEBREW · KAIHEN</text>
-  <text x="38" y="122" class="title" fill="url(#ink)">Mizuiro</text>
-  <text x="40" y="160" class="sub">Video, music, radio, books and file transfers,</text>
-  <text x="40" y="184" class="sub">made to feel at home on the console.</text>
+  <g clip-path="url(#card)">
+    <image width="{WIDTH}" height="{HEIGHT}" href="{asset_uri('brand-bg.png')}" preserveAspectRatio="none"/>
+  </g>
+  <image x="40" y="{(HEIGHT - SEAL_H) // 2}" width="{seal_w}" height="{SEAL_H}" href="{asset_uri('brand-seal.png')}"/>
+  <image x="{text_x}" y="62" width="{word_w}" height="{WORD_H}" href="{asset_uri('brand-wordmark.png')}"/>
+  <text x="{text_x}" y="124" class="sub">Video, music, radio, books and file transfers</text>
+  <text x="{text_x}" y="146" class="sub">for Nintendo Switch 2.</text>
+  <text x="{text_x}" y="172" class="tag">SWITCH 2 HOMEBREW · KAIHEN</text>
   {''.join(icons)}
 </svg>
 """
