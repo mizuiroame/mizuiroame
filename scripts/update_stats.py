@@ -83,9 +83,18 @@ def number(value: int) -> str:
     return f"{value:,}"
 
 
+SEAL_W, SEAL_H = 58, 96  # Mizuiro's seal, faint, over the signature at the bottom right.
+
+
+def seal_uri() -> str:
+    data = (ROOT / "assets" / "brand-seal.png").read_bytes()
+    return "data:image/png;base64," + base64.b64encode(data).decode("ascii")
+
+
 def render(stats: list[Stats], today: dt.date) -> str:
     width, row_h, top = 640, 78, 156
-    height = top + row_h * len(stats) + 46
+    seal = seal_uri()
+    height = top + row_h * len(stats) + 46 + SEAL_H - 30  # Room at the foot for the seal over the name.
     total_stars = sum(s.stars for s in stats)
     total_downloads = sum(s.downloads for s in stats)
     most = max((s.downloads for s in stats), default=0) or 1
@@ -110,33 +119,44 @@ def render(stats: list[Stats], today: dt.date) -> str:
   <title>Kai apps: {number(total_stars)} stars, {number(total_downloads)} downloads</title>
   <defs>
     <clipPath id="round" clipPathUnits="objectBoundingBox"><rect width="1" height="1" rx="0.22"/></clipPath>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2C2D32"/>
-      <stop offset="1" stop-color="#1E1F24"/>
-    </linearGradient>
+    <clipPath id="card"><rect width="{width}" height="{height}" rx="18"/></clipPath>
+    <radialGradient id="glow" cx="0.72" cy="0.2" r="0.75">
+      <stop offset="0" stop-color="#BCE2E8" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#BCE2E8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="lines" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="1" height="26" fill="#BCE2E8" opacity=".035"/>
+    </pattern>
   </defs>
   <style>
     text {{ font-family: "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; }}
-    .label {{ fill: #8B8D98; font-size: 15px; font-weight: 600; letter-spacing: 1.5px; }}
-    .big {{ fill: #F4F4F6; font-size: 46px; font-weight: 700; }}
-    .name {{ fill: #F4F4F6; font-size: 22px; font-weight: 700; }}
-    .kind {{ fill: #8B8D98; font-size: 15px; }}
-    .num {{ fill: #F4F4F6; font-size: 19px; font-weight: 600; }}
-    .star {{ fill: #FFD166; }}
-    .head {{ fill: #8B8D98; font-size: 13px; font-weight: 600; letter-spacing: 1px; }}
-    .foot {{ fill: #62646E; font-size: 13px; }}
-    .track {{ fill: #3A3B42; }}
+    .label {{ fill: #7E8A90; font-size: 13px; font-weight: 600; letter-spacing: 2.4px; }}
+    .big {{ fill: #E8F1F3; font-size: 46px; font-weight: 700; }}
+    .name {{ fill: #E8F1F3; font-size: 22px; font-weight: 700; }}
+    .kind {{ fill: #7E8A90; font-size: 15px; }}
+    .num {{ fill: #E8F1F3; font-size: 19px; font-weight: 600; }}
+    .star {{ fill: #BCE2E8; }}
+    .head {{ fill: #7E8A90; font-size: 12px; font-weight: 600; letter-spacing: 2px; }}
+    .foot {{ fill: #5A646A; font-size: 12px; letter-spacing: 0.3px; }}
+    .sign {{ fill: #BCE2E8; font-size: 11px; font-weight: 300; letter-spacing: 4px; opacity: .7; }}
+    .track {{ fill: #1C2026; }}
   </style>
-  <rect width="{width}" height="{height}" rx="18" fill="url(#bg)"/>
-  <path d="M{width - 200} 0 L{width} 0 L{width} {height} L{width - 200 - height} {height} Z" fill="#000" opacity=".12"/>
+  <g clip-path="url(#card)">
+    <rect width="{width}" height="{height}" fill="#0C0D13"/>
+    <rect width="{width}" height="{height}" fill="url(#glow)"/>
+    <rect width="{width}" height="{height}" fill="url(#lines)"/>
+    <rect y="{height - 3}" width="{width}" height="3" fill="#BCE2E8" opacity=".35"/>
+    <image x="{width - 28 - 58 - (SEAL_W - 58) // 2 - 4}" y="{height - 40 - SEAL_H}" width="{SEAL_W}" height="{SEAL_H}" href="{seal}" opacity=".22"/>
+  </g>
   <text x="36" y="46" class="label">TOTAL STARS</text>
-  <text x="36" y="98" class="big"><tspan fill="#FFD166">★</tspan> {number(total_stars)}</text>
+  <text x="36" y="98" class="big"><tspan fill="#BCE2E8">★</tspan> {number(total_stars)}</text>
   <text x="316" y="46" class="label">TOTAL DOWNLOADS</text>
-  <text x="316" y="98" class="big"><tspan fill="#4FC2F8">↓</tspan> {number(total_downloads)}</text>
+  <text x="316" y="98" class="big"><tspan fill="#BCE2E8">↓</tspan> {number(total_downloads)}</text>
   <text x="{width - 92}" y="{top - 16}" class="head" text-anchor="end">DOWNLOADS</text>
   <text x="{width - 28}" y="{top - 16}" class="head" text-anchor="end">★</text>
   {''.join(rows)}
   <text x="36" y="{height - 20}" class="foot">GitHub release downloads, Brewstore's included · {today.isoformat()}</text>
+  <text x="{width - 28}" y="{height - 20}" class="sign" text-anchor="end">MIZUIRO</text>
 </svg>
 """
 

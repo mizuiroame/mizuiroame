@@ -11,7 +11,7 @@
 
 ### <img src="assets/icons/kaivideo-256.png" width="28" align="center" alt=""> [KaiVideo](https://github.com/mizuiroame/kaivideo)
 
-<img src="https://img.shields.io/github/v/release/mizuiroame/kaivideo?style=flat-square&label=&color=FF6C9D" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kaivideo/total?style=flat-square&label=downloads&color=2C2D32" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kaivideo?style=flat-square&label=%E2%98%85&color=2C2D32" alt="stars">
+<img src="https://img.shields.io/github/v/release/mizuiroame/kaivideo?style=flat-square&label=&color=FF6C9D" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kaivideo/total?style=flat-square&label=downloads&color=1C2026" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kaivideo?style=flat-square&label=%E2%98%85&color=1C2026" alt="stars">
 
 Your films and series from the SD card, a network folder, or **Jellyfin, Emby and Plex**.
 Hardware H.264, VP9 and AV1, HEVC on the CPU, downloads to watch offline, Live TV, IPTV lists and styled subtitles.
@@ -20,7 +20,7 @@ Hardware H.264, VP9 and AV1, HEVC on the CPU, downloads to watch offline, Live T
 
 ### <img src="assets/icons/kaiplayer-256.png" width="28" align="center" alt=""> [KaiPlayer](https://github.com/mizuiroame/kaiplayer)
 
-<img src="https://img.shields.io/github/v/release/mizuiroame/kaiplayer?style=flat-square&label=&color=FF6C9D" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kaiplayer/total?style=flat-square&label=downloads&color=2C2D32" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kaiplayer?style=flat-square&label=%E2%98%85&color=2C2D32" alt="stars">
+<img src="https://img.shields.io/github/v/release/mizuiroame/kaiplayer?style=flat-square&label=&color=FF6C9D" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kaiplayer/total?style=flat-square&label=downloads&color=1C2026" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kaiplayer?style=flat-square&label=%E2%98%85&color=1C2026" alt="stars">
 
 Your music library by artist and album, from the SD card, a network folder or **Navidrome**.
 FLAC, MP3, AAC, ALAC and more, an equalizer, playlists, and Now Playing as a turning record, CD or cassette.
@@ -29,7 +29,7 @@ FLAC, MP3, AAC, ALAC and more, an equalizer, playlists, and Now Playing as a tur
 
 ### <img src="assets/icons/kairadio-256.png" width="28" align="center" alt=""> [KaiRadio](https://github.com/mizuiroame/kairadio)
 
-<img src="https://img.shields.io/github/v/release/mizuiroame/kairadio?style=flat-square&label=&color=4FC2F8" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kairadio/total?style=flat-square&label=downloads&color=2C2D32" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kairadio?style=flat-square&label=%E2%98%85&color=2C2D32" alt="stars">
+<img src="https://img.shields.io/github/v/release/mizuiroame/kairadio?style=flat-square&label=&color=4FC2F8" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kairadio/total?style=flat-square&label=downloads&color=1C2026" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kairadio?style=flat-square&label=%E2%98%85&color=1C2026" alt="stars">
 
 Tens of thousands of radio stations on a 3D globe, by genre, country or name, with each country's time and weather.
 Plus **podcasts**: top charts by region, search and subscriptions.
@@ -38,7 +38,7 @@ Plus **podcasts**: top charts by region, search and subscriptions.
 
 ### <img src="assets/icons/kaireader-256.png" width="28" align="center" alt=""> [KaiReader](https://github.com/mizuiroame/kaireader)
 
-<img src="https://img.shields.io/badge/new-0.2-F2B54A?style=flat-square" alt="new"> <img src="https://img.shields.io/github/stars/mizuiroame/kaireader?style=flat-square&label=%E2%98%85&color=2C2D32" alt="stars">
+<img src="https://img.shields.io/badge/new-0.2-F2B54A?style=flat-square" alt="new"> <img src="https://img.shields.io/github/stars/mizuiroame/kaireader?style=flat-square&label=%E2%98%85&color=1C2026" alt="stars">
 
 Your DRM-free books from the SD card, as on an e-reader: **EPUB**, **PDF**, comics, FB2, MOBI and TXT, with their covers.
 Ten text sizes, light, sepia, dark and black pages, a table of contents, and the console held upright like a book.
@@ -47,7 +47,7 @@ Ten text sizes, light, sepia, dark and black pages, a table of contents, and the
 
 ### <img src="assets/icons/kaidrop-256.png" width="28" align="center" alt=""> [KaiDrop](https://github.com/mizuiroame/kaidrop)
 
-<img src="https://img.shields.io/github/v/release/mizuiroame/kaidrop?style=flat-square&label=&color=5DE0A6" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kaidrop/total?style=flat-square&label=downloads&color=2C2D32" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kaidrop?style=flat-square&label=%E2%98%85&color=2C2D32" alt="stars">
+<img src="https://img.shields.io/github/v/release/mizuiroame/kaidrop?style=flat-square&label=&color=5DE0A6" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kaidrop/total?style=flat-square&label=downloads&color=1C2026" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kaidrop?style=flat-square&label=%E2%98%85&color=1C2026" alt="stars">
 
 A Windows app to send music, videos and anything else to the console.
 Drag and drop both ways, transfers that resume after a cut, and names the console can actually list.
