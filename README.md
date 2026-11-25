@@ -38,10 +38,11 @@ Plus **podcasts**: top charts by region, search and subscriptions.
 
 ### <img src="assets/icons/kaireader-256.png" width="28" align="center" alt=""> [KaiReader](https://github.com/mizuiroame/kaireader)
 
-<img src="https://img.shields.io/badge/new-0.2-F2B54A?style=flat-square" alt="new"> <img src="https://img.shields.io/github/stars/mizuiroame/kaireader?style=flat-square&label=%E2%98%85&color=1C2026" alt="stars">
+<img src="https://img.shields.io/github/v/release/mizuiroame/kaireader?style=flat-square&label=&color=F2B54A" alt="version"> <img src="https://img.shields.io/github/downloads/mizuiroame/kaireader/total?style=flat-square&label=downloads&color=1C2026" alt="downloads"> <img src="https://img.shields.io/github/stars/mizuiroame/kaireader?style=flat-square&label=%E2%98%85&color=1C2026" alt="stars">
 
-Your DRM-free books from the SD card, as on an e-reader: **EPUB**, **PDF**, comics, FB2, MOBI and TXT, with their covers.
-Ten text sizes, light, sepia, dark and black pages, a table of contents, and the console held upright like a book.
+Your DRM-free books as on an e-reader: **EPUB**, **PDF**, comics (CBZ, CBR, CB7), FB2, MOBI and TXT, with their covers.
+From the SD card, a **network folder** (SMB, WebDAV, FTP, SFTP), your **book server** (Calibre-Web, Kavita, Komga) or **free classics** from Project Gutenberg and Standard Ebooks.
+Ten text sizes, four page colors, two pages side by side, zoom on comics, bookmarks, and the console held upright like a book.
 
 <a href="https://github.com/mizuiroame/kaireader"><img src="https://raw.githubusercontent.com/mizuiroame/kaireader/main/docs/screenshots/library.png" alt="KaiReader's library of covers" width="100%"></a>
 
